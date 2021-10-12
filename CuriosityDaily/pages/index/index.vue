@@ -2,9 +2,9 @@
 	<view>
 		<MyHeader></MyHeader>
 		
-		<swiper class="swiper" :indicator-dots="indicatorDots">
-			<swiper-item>
-				<view class="swiper-item" v-for="(item,index) in swiperImage" :key="index">
+		<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :indicator-active-color="indicatorColor">
+			<swiper-item v-for="(item,index) in swiperImage" :key="index" >
+				<view class="swiper-item">
 					<image :src="item" mode="widthFix"></image>
 				</view>
 			</swiper-item>
@@ -20,10 +20,12 @@
 			return {
 				indicatorDots:true,
 				swiperImage:[
-					"../../static/images/banner01.jpeg",
-					"../../static/images/banner02.png",
-					"../../static/images/banner03.jpg",
-				]
+					"/static/images/banner01.jpeg",
+					"/static/images/banner02.png",
+					"/static/images/banner03.jpg",
+				],
+				indicatorColor:'#ffc81f', // 指示点颜色
+				autoplay:true, // 循环
 			}
 		},
 		onLoad() {
