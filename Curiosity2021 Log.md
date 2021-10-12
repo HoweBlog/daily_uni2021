@@ -27,4 +27,6 @@
 	10. 引入 iconfont.css  注意标签是添加两个类名(或者直接cv)
 		- <text class="iconfont icon-search"></text>
 	11. 拆分组件 uni-app组件的使用
+	12. 轮播图  [swiper](https://uniapp.dcloud.io/component/swiper?id=swiper)
+		- 需要修改swiper 高度
 #### 
