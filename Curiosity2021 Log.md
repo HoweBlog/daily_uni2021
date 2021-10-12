@@ -23,8 +23,8 @@
 	6. 存放静态资源到static icon直接放在根目录
 	7. index.vue 入口文件 不是app.vue
 	8. 路径 -- '~@' 直接到根目录
-	9. iconfont.css 路径修改 - src 前面 add '~@/iconfonts/'  -- 保证兼容
+	9. iconfont.css 路径修改 - src 前面 add '~@/iconfonts/'  -- 保证兼容 [uni-app](https://uniapp.dcloud.io/frame?id=css%e5%bc%95%e5%85%a5%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90)
 	10. 引入 iconfont.css  注意标签是添加两个类名(或者直接cv)
 		- <text class="iconfont icon-search"></text>
-
+	11. 拆分组件 uni-app组件的使用
 #### 
