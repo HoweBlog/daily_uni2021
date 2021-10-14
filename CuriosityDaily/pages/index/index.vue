@@ -1,11 +1,16 @@
 <template>
 	<view>
+		<!-- header -->
 		<MyHeader></MyHeader>
 		
+		<!-- swiper -->
 		<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :indicator-active-color="indicatorColor">
 			<swiper-item v-for="(item,index) in swiperImage" :key="index" >
 				<view class="swiper-item">
 					<image :src="item" mode="widthFix"></image>
+					<view class="">
+						
+					</view>
 				</view>
 			</swiper-item>
 		</swiper>
