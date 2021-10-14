@@ -1,11 +1,14 @@
 <template>
 	<view>
+		<!-- header -->
 		<MyHeader></MyHeader>
 		
+		<!-- swiper -->
 		<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :indicator-active-color="indicatorColor">
 			<swiper-item v-for="(item,index) in swiperImage" :key="index" >
 				<view class="swiper-item">
 					<image :src="item" mode="widthFix"></image>
+<<<<<<< HEAD
 					<view class="Copywriter">
 						<view class="desc">
 							<text class="iconfont icon-001danche-2"></text>
@@ -13,6 +16,10 @@
 						</view>
 						<view class="title">100861110086111008611100861110086111008611100861110086111008611100861110086111008611100861110086111008611
 						</view>
+=======
+					<view class="">
+						
+>>>>>>> 9a5d3629835b5572672d80fe272ff7e2a6581d96
 					</view>
 				</view>
 			</swiper-item>
