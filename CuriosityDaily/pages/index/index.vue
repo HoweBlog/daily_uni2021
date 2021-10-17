@@ -2,24 +2,16 @@
 	<view>
 		<!-- header -->
 		<MyHeader></MyHeader>
-		
+
 		<!-- swiper -->
-		<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :indicator-active-color="indicatorColor">
-			<swiper-item v-for="(item,index) in swiperImage" :key="index" >
-				<view class="swiper-item">
-					<image :src="item" mode="widthFix"></image>
-<<<<<<< HEAD
-					<view class="Copywriter">
-						<view class="desc">
-							<text class="iconfont icon-001danche-2"></text>
-							Howe
-						</view>
-						<view class="title">100861110086111008611100861110086111008611100861110086111008611100861110086111008611100861110086111008611
-						</view>
-=======
-					<view class="">
-						
->>>>>>> 9a5d3629835b5572672d80fe272ff7e2a6581d96
+		<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay"
+			:indicator-active-color="indicatorColor">
+			<swiper-item v-for="item in bannerArr" :key="item.id">
+				<image :src="item.imgSrc" mode="widthFix"></image>
+				<view class="Copywriter">
+					<view class="desc"><text class="iconfont icon-001danche-2"></text>文化 · 长文章</view>
+					<view class="title">
+						{{item.title}}
 					</view>
 				</view>
 			</swiper-item>
@@ -29,18 +21,29 @@
 
 <script>
 	import MyHeader from "../../components/MyHeader.vue"
-	
+
 	export default {
 		data() {
 			return {
-				indicatorDots:true,
-				swiperImage:[
-					"/static/images/banner01.jpeg",
-					"/static/images/banner02.png",
-					"/static/images/banner03.jpg",
+				indicatorDots: true,
+				bannerArr: [{
+						"id": "banner01",
+						"imgSrc": "/static/images/banner01.jpeg",
+						"title": "“一直赚不到钱，一辈子也就这么过来了”｜汉口故事③"
+					},
+					{
+						"id": "banner02",
+						"imgSrc": "/static/images/banner02.png",
+						"title": "小百货贩子、木材商人和作家，77 岁的王仁昌如何看待他的逆反一生｜汉口故事②"
+					},
+					{
+						"id": "banner03",
+						"imgSrc": "/static/images/banner03.jpg",
+						"title": "“伊拉克还得开发十多年吧，开发完差不多我退休” | 大庆故事⑩"
+					}
 				],
-				indicatorColor:'#ffc81f', // 指示点颜色
-				autoplay:true, // 循环
+				indicatorColor: '#ffc81f', // 指示点颜色
+				autoplay: true, // 循环
 			}
 		},
 		onLoad() {
@@ -49,47 +52,54 @@
 		methods: {
 
 		},
-		components:{ MyHeader },
+		components: {
+			MyHeader
+		},
 	}
 </script>
-<style lang="scss">	
-	// 引入 css
-	@import url('/iconfonts/iconfont.css');
-	swiper{
+<style lang="scss">
+	// 引入 css --  全局引入
+	// @import url('/iconfonts/iconfont.css');
+	swiper {
 		// 设置 swiper 高度
-		height: calc(100vw * 450/755);
-		swiper-item{
+		height: calc(450/755*100vw);
+
+		swiper-item {
 			position: relative;
-			image{
+
+			image {
 				width: 100vw;
 				filter: brightness(0.8);
 			}
-			.Copywriter{
+
+			.Copywriter {
 				position: absolute;
 				left: 0;
-				bottom:40rpx;
+				bottom: 50rpx;
 				padding: 0 4%;
-				width: 92%;
-				.desc{
-					background: rgba(0,0,0,0.5);
-					display: inline-block;
+
+				.desc {
+					background: rgba(0, 0, 0, .5);
 					color: #ffc81f;
-					font-size: 12rpx;
-					padding: 0 2px;
-					line-height: 24rpx;
-					text{
-						display: inline-block;
-						margin-right: 8rpx;
+					font-size: 28rpx;
+					padding-right: 10rpx;
+					display: inline-block;
+
+					.iconfont {
+						margin: 0 10rpx;
 					}
 				}
-				.title{
-					margin-top: 10rpx;
-					font-size: 46rpx;
-					line-height: 46rpx;
+
+				.title {
 					color: #fff;
 					overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+
 				}
-			}			
+			}
 		}
 	}
 </style>

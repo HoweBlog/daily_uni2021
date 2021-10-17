@@ -18,7 +18,7 @@
 
 <style lang="scss">
 	// 引入 css
-	@import url('/iconfonts/iconfont.css');
+	// @import url('/iconfonts/iconfont.css');
 	.header{
 		background: #000;
 		height: 88rpx; // == 44px
