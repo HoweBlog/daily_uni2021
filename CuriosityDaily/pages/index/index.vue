@@ -16,6 +16,24 @@
 				</view>
 			</swiper-item>
 		</swiper>
+		<view class="list">
+			<view class="li">
+				<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay"
+					:indicator-active-color="indicatorColor">
+					<swiper-item v-for="item in bannerArr" :key="item.id">
+						<image :src="item.imgSrc" mode="widthFix"></image>
+						<view class="Copywriter">
+							<view class="desc">$ 商业</view>
+							<view class="title">和脚后跟被点击被点击电话局v记得 充电口 都很好看是大括号是DVD海康边框</view>
+							<view class="GiveLike">
+								<text class="iconfont icon-aixin"></text>
+								<text>94</text>
+							</view>
+						</view>
+					</swiper-item>
+				</swiper>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -63,42 +81,48 @@
 	swiper {
 		// 设置 swiper 高度
 		height: calc(450/755*100vw);
-
 		swiper-item {
 			position: relative;
-
 			image {
-				width: 100vw;
+				width: 100vw;				
 				filter: brightness(0.8);
 			}
-
-			.Copywriter {
-				position: absolute;
-				left: 0;
-				bottom: 50rpx;
-				padding: 0 4%;
-
-				.desc {
-					background: rgba(0, 0, 0, .5);
-					color: #ffc81f;
-					font-size: 28rpx;
-					padding-right: 10rpx;
-					display: inline-block;
-
-					.iconfont {
-						margin: 0 10rpx;
-					}
-				}
-
-				.title {
-					color: #fff;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					display: -webkit-box;
-					-webkit-line-clamp: 3;
-					-webkit-box-orient: vertical;
-
-				}
+		}
+	}
+	.Copywriter {
+		position: absolute;
+		left: 0;
+		bottom: 40rpx;
+		padding: 0 4%;
+	
+		.desc {
+			background: rgba(0, 0, 0, .5);
+			color: #ffc81f;
+			font-size: 28rpx;
+			padding-right: 10rpx;
+			display: inline-block;
+	
+			.iconfont {
+				margin: 0 10rpx;
+			}
+		}
+	
+		.title {
+			color: #fff;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+	
+		}
+	}
+	.list{
+		.li{
+			margin-top: 10rpx;
+			position: relative;
+			.GiveLike{
+				color: #FFFFFF;
 			}
 		}
 	}
