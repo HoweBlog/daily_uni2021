@@ -122,7 +122,9 @@
 			margin-top: 10rpx;
 			position: relative;
 			.GiveLike{
+				margin: 6rpx;
 				color: #FFFFFF;
+				font-size: 24rpx;
 			}
 		}
 	}
