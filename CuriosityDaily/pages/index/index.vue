@@ -65,7 +65,14 @@
 			}
 		},
 		onLoad() {
-
+			// 调用云函数
+			uniCloud.callFunction({
+			    name: 'getNews', // 云函数的函数 name
+			  }).then(res=>{
+				  console.log("getNews",res);
+			  }).catch(err=>{
+				  if(err) console.log(err);
+			  })
 		},
 		methods: {
 
