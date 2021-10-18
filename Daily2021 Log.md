@@ -40,3 +40,5 @@
 	1. [cloudfunctions] 右键创建云函数 [云函数操作云数据库](https://uniapp.dcloud.io/uniCloud/cf-database)
 	2. 创建完毕之后，本地运行云函数 -- 有报错一定要看报错
 	3. 上传部署，完成之后即可运行
+#### 客户端调用云函数
+	1. 云函数 -  [客户端调用云函数](https://uniapp.dcloud.io/uniCloud/cf-functions?id=clientcallfunction)
