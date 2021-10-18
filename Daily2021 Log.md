@@ -29,4 +29,9 @@
 	11. 拆分组件 uni-app组件的使用
 	12. 轮播图  [swiper](https://uniapp.dcloud.io/component/swiper?id=swiper)
 		- 需要修改swiper 高度
-#### 
+#### 云开发
+	1. 在根文件夹，右键 创建uniCloud云开发环境 ( 阿里云，腾讯云[只允许建一次] ）
+	2.  [阿里云·为关联云服务空间]  运行云服务空间初始化
+#### 将导入数据云数据库
+	1. 创建完可以在 uniCloud关联
+	2. 在云数据库创建表 集合，导数JSON 数据 [uniCloud](https://unicloud.dcloud.net.cn)
