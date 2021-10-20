@@ -4,9 +4,9 @@
 		<MyHeader></MyHeader>
 
 		<!-- swiper -->
-		<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay"
-			:indicator-active-color="indicatorColor">
-			<swiper-item v-for="item in bannerArr" :key="item.id">
+		<swiper class="swiper" :indicator-dots="true" :autoplay="true"
+			indicator-active-color="#ffc81f">
+			<swiper-item v-for="item in bannerArr" :key="item.id">				
 				<image :src="item.imgSrc" mode="widthFix"></image>
 				<view class="Copywriter">
 					<view class="desc"><text class="iconfont icon-001danche-2"></text>文化 · 长文章</view>
@@ -17,17 +17,16 @@
 			</swiper-item>
 		</swiper>
 		<view class="list">
-			<view class="li">
-				<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay"
-					:indicator-active-color="indicatorColor">
-					<swiper-item v-for="item in bannerArr" :key="item.id">
+			<view class="li" v-for="item in articleArr" :key="item.id">
+				<swiper class="swiper">
+					<swiper-item>
 						<image :src="item.imgSrc" mode="widthFix"></image>
 						<view class="Copywriter">
 							<view class="desc">$ 商业</view>
-							<view class="title">和脚后跟被点击被点击电话局v记得 充电口 都很好看是大括号是DVD海康边框</view>
+							<view class="title">{{item.title}}</view>
 							<view class="GiveLike">
 								<text class="iconfont icon-aixin"></text>
-								<text>94</text>
+								<text>{{item.love}}</text>
 							</view>
 						</view>
 					</swiper-item>
@@ -43,25 +42,8 @@
 	export default {
 		data() {
 			return {
-				indicatorDots: true,
-				bannerArr: [{
-						"id": "banner01",
-						"imgSrc": "/static/images/banner01.jpeg",
-						"title": "“一直赚不到钱，一辈子也就这么过来了”｜汉口故事③"
-					},
-					{
-						"id": "banner02",
-						"imgSrc": "/static/images/banner02.png",
-						"title": "小百货贩子、木材商人和作家，77 岁的王仁昌如何看待他的逆反一生｜汉口故事②"
-					},
-					{
-						"id": "banner03",
-						"imgSrc": "/static/images/banner03.jpg",
-						"title": "“伊拉克还得开发十多年吧，开发完差不多我退休” | 大庆故事⑩"
-					}
-				],
-				indicatorColor: '#ffc81f', // 指示点颜色
-				autoplay: true, // 循环
+				bannerArr: [], // 第一项轮播图
+				articleArr:[], // 商业数据
 			}
 		},
 		onLoad() {
@@ -69,7 +51,12 @@
 			uniCloud.callFunction({
 			    name: 'getNews', // 云函数的函数 name
 			  }).then(res=>{
-				  console.log("getNews",res);
+				  console.log("getNews",res.result);
+				  if(res.result) { 
+					  let { articleArr,bannerArr} = res.result[0];
+					  this.articleArr = articleArr; // 商业数据
+					  this.bannerArr = bannerArr; // 商业数据
+				  }
 			  }).catch(err=>{
 				  if(err) console.log(err);
 			  })
@@ -131,7 +118,13 @@
 			.GiveLike{
 				margin: 6rpx;
 				color: #FFFFFF;
-				font-size: 24rpx;
+				font-size: 20rpx;
+				text{
+					line-height: 20rpx;
+				}
+				.iconfont{
+					font-size: 20rpx;
+				}
 			}
 		}
 	}

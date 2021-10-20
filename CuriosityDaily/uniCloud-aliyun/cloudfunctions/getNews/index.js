@@ -10,6 +10,6 @@ exports.main = async (event, context) => {
 	// 获取 news的集合
 	return db.collection("news").get().then(res=>{
 		console.log(res);
-		return res
+		return res.data
 	})
 };

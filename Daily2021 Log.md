@@ -42,3 +42,5 @@
 	3. 上传部署，完成之后即可运行
 #### 客户端调用云函数
 	1. 云函数 -  [客户端调用云函数](https://uniapp.dcloud.io/uniCloud/cf-functions?id=clientcallfunction)
+	2. 更新云函数，直接拿到数据。 上传部署
+	3. 完成list渲染，调试完毕
