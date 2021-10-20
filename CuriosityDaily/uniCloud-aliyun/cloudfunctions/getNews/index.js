@@ -8,7 +8,7 @@ exports.main = async (event, context) => {
 	//event为客户端上传的参数
 	console.log('event : ', event)	
 	// 获取 news的集合
-	return db.collection("news").get().then(res=>{
+	return db.collection(event.name).get().then(res=>{
 		console.log(res);
 		return res.data
 	})

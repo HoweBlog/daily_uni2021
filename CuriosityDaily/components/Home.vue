@@ -47,6 +47,9 @@
 			// 调用云函数
 			uniCloud.callFunction({
 			    name: 'getNews', // 云函数的函数 name
+				data:{
+					name:"news", // 客户端上传的参数
+				}
 			  }).then(res=>{
 				  console.log("getNews",res.result);
 				  if(res.result) { 
