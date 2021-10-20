@@ -1,7 +1,7 @@
 <template>
 	<view class="header">
-		<image src="../static/images/logo.png" mode="widthFix"></image>
-		<text class="iconfont icon-search"></text>
+		<image src="../static/images/logo.png" mode="widthFix"  @tap="IsShowPage(true)"></image>
+		<text class="iconfont icon-search" @tap="IsShowPage(false)"></text>
 	</view>
 </template>
 
@@ -12,7 +12,12 @@
 			return {
 				
 			};
-		}
+		},
+		methods:{
+			 IsShowPage(par){
+				 uni.$emit('IsShowPage',par)
+			 }
+		},
 	}
 </script>
 

@@ -18,12 +18,19 @@
 	export default {
 		data() {
 			return {
-				flag:false
+				flag:true
 			}
 		},
 		onLoad() {
 			
 		},
+		onReady(){
+			let that = this;
+			uni.$on("IsShowPage",(pre)=>{
+				// 这里的this 是指 uni
+				that.flag = pre;
+			})
+		}, // 监听页面初次渲染完成
 		methods: {
 
 		},

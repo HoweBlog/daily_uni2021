@@ -47,3 +47,21 @@
 	4. <style lang="scss" scoped> 不影响其他布局
 	5. 云函数重新定义
 	6. 完成search page
+#### 通讯 事件
+	1.  @tap="" -- 触摸事件
+	2.  
+	{
+		<!-- 子组件 -->
+		IsShowPage(par){
+			uni.$emit('IsShowPage',par)
+		}
+		
+		<!-- 父组件 -->
+		onReady(){
+			let that = this;
+			uni.$on("IsShowPage",(pre)=>{
+				// 这里的this 是指 uni
+				that.flag = pre;
+			})
+		}, // 监听页面初次渲染完成
+	}

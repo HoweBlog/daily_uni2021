@@ -15,19 +15,15 @@
 		</swiper>
 		<view class="list">
 			<view class="li" v-for="item in articleArr" :key="item.id">
-				<swiper class="swiper">
-					<swiper-item>
-						<image :src="item.imgSrc" mode="widthFix"></image>
-						<view class="Copywriter">
-							<view class="desc">$ 商业</view>
-							<view class="title">{{item.title}}</view>
-							<view class="GiveLike">
-								<text class="iconfont icon-aixin"></text>
-								<text>{{item.love}}</text>
-							</view>
-						</view>
-					</swiper-item>
-				</swiper>
+				<image :src="item.imgSrc" mode="widthFix"></image>
+				<view class="Copywriter">
+					<view class="desc">$ 商业</view>
+					<view class="title">{{item.title}}</view>
+					<view class="GiveLike">
+						<text class="iconfont icon-aixin"></text>
+						<text>{{item.love}}</text>
+					</view>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -107,7 +103,11 @@
 		}
 	}
 	.list{
-		.li{
+		width: 100vw;
+		image{
+			width: 100%;
+		}
+		.li{			
 			margin-top: 10rpx;
 			position: relative;
 			.GiveLike{
